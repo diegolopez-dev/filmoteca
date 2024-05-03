@@ -1,0 +1,32 @@
+{{#if peliculas}}
+<div class="container-fluid mt-3 mx-auto p-2">
+    <h2 class="text-center mb-3">Listado de peliculas
+        <i class="fa-solid fa-photo-film"></i>
+    </h2>
+    {{#each peliculas}}
+    <div id="card" class="card mt-4 p-3 text-center text-bg-dark mx-auto" style="max-width: 960px;">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="card-body">
+                    <h5 class="card-title fs-4">Titulo: {{titulo}}</h5>
+                    <p class="card-text mb-0 fs-6">Genero: {{genero}}</p>
+                    <p class="card-text mb-4 fs-4">Descipcion: {{descripcion}}</p>
+                </div>
+                <div class="text-center mb-2">
+                    <a href="/edit/{{id}}" class="btn btn-secondary">Actualizar <i class="fa-solid fa-pencil"></i></a>
+                    <a href="/delete/{{id}}" class="btn btn-danger">Borrar <i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<div class="container-fluid text-center mt-2 p-2 mx-auto" style="max-width: 720px;">
+    <h2>Actualmente no hay peliculas
+        <i class="fa-solid fa-ban"></i>
+    </h2>
+    <p class="mt-4 mb-4 fs-4">Añade una nueva pelicula 👇</p>
+    <a href="/add" class="btn btn-dark">Crear pelicula</a>
+</div>
+{{/if}}

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu Sans Mono", sans-serf;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body {
+  background-color: #010300;
+  color: #fff;
+  position: relative;
+  padding-bottom: 5.5rem;
+  min-height: 100vh;
+}
+
+#navbar {
+  background-color: #011000;
+  text-shadow: 2px 2px 1px #594d7a;
+}
+
+#card {
+  filter: drop-shadow(5px 5px 10px #594d7a);
+}
+
+.btn {
+  border: 2px solid #594d7a !important;
+}
+
+#buttonNavbar {
+  background-color: #b6b1c4;
+  padding: .2rem;
+  font-size: 1.2rem;
+}

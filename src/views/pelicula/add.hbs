@@ -1,0 +1,23 @@
+<div class="container mt-2 mx-auto p-2" style="max-width: 960px;">
+    <h2 class="text-center mb-2">Crea una nueva pelicula
+        <i class="fa-solid fa-square-plus"></i>
+    </h2>
+    <form class="p-2 fs-5 fw-bold" action="/add" method="post">
+        <div class="mb-3">
+            <label class="form-label p-1" for="titulo">Titulo</label>
+            <input type="text" id="titulo" class="form-control" name="titulo" placeholder="Escriba el titulo" autofocus
+                required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label p-1" for="genero">Genero</label>
+            <input type="text" id="genero" class="form-control" name="genero" placeholder="Escriba el genero" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label p-1" for="descripcion">Descripcion</label>
+            <textarea id="descripcion" class="form-control" name="descripcion" placeholder="Escriba una breve descripcion" required></textarea>
+        </div>
+        <div class="mt-4 text-center fs-3">
+            <button class="btn btn-success">Crear pelicula</button>
+        </div>
+    </form>
+</div>
