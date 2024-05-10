@@ -12,11 +12,11 @@ películas.</h3>
 ## ⚙️ Configuración
 
 1. Crear una base de datos MySQL.
-2. Configurar las credenciales en `config/db.config.js`.
+2. Configurar las credenciales en `src/database.database.js`.
 
 ## ℹ️ Uso
 
-1. Ejecutar el servidor con `nodemon run dev`.
+1. Ejecutar el servidor con `npm run dev`.
 2. Acceder a `http://localhost:3000` en tu navegador.
 
 ## 🎬 Funcionalidades
@@ -25,11 +25,3 @@ películas.</h3>
 - **Ver todas las películas:** `GET /peliculas`
 - **Actualizar película:** `PUT /peliculas/:id`
 - **Eliminar película:** `DELETE /peliculas/:id`
-
-## 🤝 Contribución
-
-1. Forkea el repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
-3. Realiza tus cambios y haz commits.
-4. Sube tu rama (`git push origin feature/nueva-caracteristica`).
-5. Crea un Pull Request.
