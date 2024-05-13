@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import personasRoutes from './routers/peliculas.routes.js'
-import pool from '../database/database.js'
+//import pool from './database/database.js'
 
 //Inicializacion
 const app = express()
@@ -32,17 +32,17 @@ app.get('/', (req, res) => {
 })
 app.use(personasRoutes)
 
-app.get('/', async (req, res) => {
-  try{
-      await pool.query('CREATE DATABASE Peliculas'),
-        res.render('index.hbs')
-  }
-  catch(err){
-      res.status(500).json({
-          message: err.message
-      })
-  }
-})
+// app.get('/', async (req, res) => {
+//   try{
+//       await pool.query('CREATE DATABASE Peliculas')
+//       res.render('index.hbs')
+//   }
+//   catch(err){
+//       res.status(500).json({
+//           message: err.message
+//       })
+//   }
+// })
 
 //Archivos public
 app.use(express.static(join(__dirname, 'public')))
