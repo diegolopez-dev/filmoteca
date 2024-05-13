@@ -31,6 +31,7 @@ body {
 
 #card {
   filter: drop-shadow(5px 5px 10px #594d7a);
+  max-width: 720px;
 }
 
 .btn {
