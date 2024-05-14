@@ -11,19 +11,19 @@
 
 // 
 
-import pg  from "pg";
-import { DB_URL, DB_HOST, DB_NAME, DB_PASSWORD, DB_USER, DB_PORT } from '../config.js'
+// import pg  from "pg";
+// import { DB_URL, DB_HOST, DB_NAME, DB_PASSWORD, DB_USER, DB_PORT } from '../config.js'
 
-export const pool = new pg.Pool({
-    connectionString: DB_URL,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    host: DB_HOST,
-    port: DB_PORT,
-    database: DB_NAME
-})
+// export const pool = new pg.Pool({
+//     connectionString: DB_URL,
+//     user: DB_USER,
+//     password: DB_PASSWORD,
+//     host: DB_HOST,
+//     port: DB_PORT,
+//     database: DB_NAME
+// })
 
-export default pool
+// export default pool
 
 // import { createPool } from 'mysql2/promise'
 // import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER, DB_PORT } from '../config.js'
@@ -37,3 +37,13 @@ export default pool
 // })
 
 // export default pool
+
+import { createClient } from "@libsql/client";
+import { DB_TOKEN } from '../config.js'
+
+const pool = createClient({
+    url: "libsql://welcome-damage-control-diegolopez-dev.turso.io",
+    authToken: DB_TOKEN
+})
+
+export default pool
