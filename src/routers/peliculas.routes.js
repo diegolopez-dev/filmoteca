@@ -3,18 +3,18 @@ import pool from '../database/database.js'
 
 const router = Router()
 
-await pool.execute(`
-  CREATE TABLE IF NOT EXISTS pelicula (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    titulo TEXT NOT NULL,
-    genero TEXT NOT NULL,
-    descripcion TEXT NOT NULL
-  )
-`);
+// pool.execute(`
+//   CREATE TABLE IF NOT EXISTS pelicula (
+//     id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     titulo TEXT NOT NULL,
+//     genero TEXT NOT NULL,
+//     descripcion TEXT NOT NULL
+//   )
+// `);
 
 router.get('/list', async (req, res) => {
     try{
-        const result = await pool.execute('SELECT * FROM pelicula')
+        const [result] = await pool.execute('SELECT * FROM pelicula')
         res.render('pelicula/list', { peliculas: result })
     }
     catch(err){
@@ -30,13 +30,12 @@ router.get('/add', (req, res) => {
 
 router.post('/add', async (req, res) => {
     try{
-        let result
         const { titulo, genero, descripcion } = req.body
-        result = await pool.execute({
-            sql: "INSERT INTO pelicula (titulo, genero, descripcion) VALUES (:titulo, :genero, :descripcion)",
-            args: { titulo, genero, descripcion },
-        });
-        res.redirect('/list')
+        const newPelicula = {
+            titulo, genero, descripcion
+        }
+        await pool.query('INSERT INTO pelicula SET ?', [newPelicula]);
+        res.redirect('/list');
     }
     catch(err){
         res.status(500).json({
@@ -64,7 +63,7 @@ router.post('/edit/:id', async (req, res) => {
         const {titulo, genero, descripcion} = req.body
         const {id} = req.params
         const updatepelicula = {titulo, genero, descripcion}
-        await pool.execute('UPDATE pelicula SET ? WHERE id = ?', [updatepelicula, id])
+        await pool.query('UPDATE pelicula SET ? WHERE id = ?', [updatepelicula, id])
         res.redirect('/list')
     }
     catch(err){

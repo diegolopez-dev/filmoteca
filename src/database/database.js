@@ -1,13 +1,15 @@
-// import { createPool } from 'mysql2/promise'
-// import { config } from "dotenv"
-// config()
+import { createPool } from 'mysql2/promise'
+import { config } from "dotenv"
+config()
 
-// const pool = createPool({
-//     host: 'localhost',
-//     port: '3306',
-//     user: 'root',
-//     database: 'Peliculas'
-// })
+const pool = createPool({
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    database: 'Peliculas'
+})
+
+export default pool
 
 // 
 
@@ -38,12 +40,12 @@
 
 // export default pool
 
-import { createClient } from "@libsql/client";
-import { DB_TOKEN } from '../config.js'
+// import { createClient } from "@libsql/client";
+// import { DB_TOKEN } from '../config.js'
 
-const pool = createClient({
-    url: "libsql://welcome-damage-control-diegolopez-dev.turso.io",
-    authToken: DB_TOKEN
-})
+// const pool = createClient({
+//     url: "libsql://welcome-damage-control-diegolopez-dev.turso.io",
+//     authToken: DB_TOKEN
+// })
 
-export default pool
+// export default pool
