@@ -1,8 +1,6 @@
 <h1 align="center">🎞 Filmoteca Diego</h1>
 
-<h3>Proyecto de filmoteca desarrollado con Node.js, Express, MySQL y Handlebars, que permite crear, ver, actualizar y borrar 
-películas.</h3>
-
+<h3>Proyecto de filmoteca desarrollado con Node.js, Express, MySQL y Handlebars, que permite crear, ver, actualizar y borrar películas.</h3>
 
 ## 🚀 Instalación
 

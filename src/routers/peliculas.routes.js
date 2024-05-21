@@ -3,15 +3,6 @@ import pool from '../database/database.js'
 
 const router = Router()
 
-// pool.execute(`
-//   CREATE TABLE IF NOT EXISTS pelicula (
-//     id INTEGER PRIMARY KEY AUTOINCREMENT,
-//     titulo TEXT NOT NULL,
-//     genero TEXT NOT NULL,
-//     descripcion TEXT NOT NULL
-//   )
-// `);
-
 router.get('/list', async (req, res) => {
     try{
         const [result] = await pool.execute('SELECT * FROM pelicula')

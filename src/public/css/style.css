@@ -19,9 +19,9 @@ a {
 body {
   background-color: #010300;
   color: #fff;
-  position: relative;
-  padding-bottom: 5.5rem;
+  display: grid;
   min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 #navbar {
@@ -42,4 +42,27 @@ body {
   background-color: #b6b1c4;
   padding: .2rem;
   font-size: 1.2rem;
+}
+
+footer {
+  margin-top: auto;
+  color: var(--font-color);
+}
+
+.rrss-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.rrss-footer p {
+  margin-bottom: 0;
+}
+
+.rrss-footer svg {
+  color: var(--font-color);
 }
