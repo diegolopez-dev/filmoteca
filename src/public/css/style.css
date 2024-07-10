@@ -44,6 +44,13 @@ body {
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 768px) {
+  #img-login {
+    display: flex;
+    width: 40%;
+  }
+}
+
 footer {
   margin-top: auto;
   color: var(--font-color);

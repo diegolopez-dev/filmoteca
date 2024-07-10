@@ -13,9 +13,12 @@
   "license": "ISC",
   "dependencies": {
     "@libsql/client": "^0.6.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
+    "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.9.7",
     "pg": "^8.12.0"
